@@ -17,19 +17,23 @@ namespace Uno
             {
                 foreach (string value in values)
                 {
-                    deck.Add(new UnoCard
+                    // add two of each
+                    for (int i = 0; i < 2; i++)
                     {
-                        cardColor = color,
-                        cardValue = value,
-                        isJoker = false,
-                        isPlus2 = false,
-                        isReverse = false
+                        deck.Add(new UnoCard
+                        {
+                            cardColor = color,
+                            cardValue = value,
+                            isJoker = false,
+                            isPlus2 = false,
+                            isReverse = false
+                        }
+                        );
                     }
-                    );
                 }
 
                 // add specials
-                deck.Add(new UnoCard
+                    deck.Add(new UnoCard
                 {
                     cardColor = color,
                     cardValue = "Reverse",

@@ -38,14 +38,14 @@ namespace Uno
             {
                 if (Equals(u.cardColor, top.cardColor))
                 {
-                    Console.WriteLine("{0} plays {1} {2}", PlayerName, u.cardValue, u.cardColor);
+                    Console.WriteLine("{0} plays {1} {2}.", PlayerName, u.cardValue, u.cardColor);
                     hand.Remove(u);
                     CheckForUno();
                     return u;
                 }
                 if (Equals(u.cardValue, top.cardValue))
                 {
-                    Console.WriteLine("{0} plays {1} {2}", PlayerName, u.cardValue, u.cardColor);
+                    Console.WriteLine("{0} plays {1} {2}.", PlayerName, u.cardValue, u.cardColor);
                     hand.Remove(u);
                     CheckForUno();
                     return u;
@@ -57,20 +57,21 @@ namespace Uno
 
             if (Equals(newCard.cardColor, top.cardColor))
             {
-                Console.WriteLine("{0} plays new card {1} {2}", PlayerName, newCard.cardValue, newCard.cardColor);
+                Console.WriteLine("{0} draws and immediately plays {1} {2}.", PlayerName, newCard.cardValue, newCard.cardColor);
                 CheckForUno();
                 return newCard;
             }
             if (Equals(newCard.cardValue, top.cardValue))
             {
-                Console.WriteLine("{0} plays new card {1} {2}", PlayerName, newCard.cardValue, newCard.cardColor);
+                Console.WriteLine("{0} draws and immediately plays {1} {2}.", PlayerName, newCard.cardValue, newCard.cardColor);
                 CheckForUno();
                 return newCard;
             }
 
-            // no luck...
-            Console.WriteLine("{0} adds card {1} {2}", PlayerName, newCard.cardValue, newCard.cardColor);
+            // new card is no match with top card
+            Console.WriteLine("{0} draws and adds {1} {2} to their hand.", PlayerName, newCard.cardValue, newCard.cardColor);
             hand.Add(newCard);
+            //To Do: find a better name, because it is illogical to Check for Uno here since we have just drawn....
             CheckForUno();
             return null;
         }
@@ -79,11 +80,11 @@ namespace Uno
         {
             if (hand.Count == 1)
             {
-                Console.WriteLine("{0} UNO!", PlayerName);
+                Console.WriteLine("{0} calls UNO!", PlayerName);
             }
             else
             {
-                Console.WriteLine("{0} has {1} cards.", PlayerName, hand.Count);
+                Console.WriteLine("{0} now has {1} cards.", PlayerName, hand.Count);
             }
 
         }
