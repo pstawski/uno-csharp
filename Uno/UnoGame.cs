@@ -56,21 +56,20 @@ namespace Uno
                 }
             }
 
-            // Console.ReadLine();
-            // Console.ReadLine();
         }
-        void AddPlayers()
+        static void AddPlayers()
         {
-            UnoPlayer barbara = new UnoPlayer("Barbara");
-            UnoPlayer john = new UnoPlayer("John");
-            UnoPlayer michael = new UnoPlayer("Michael");
+            // determine random number of players between 2 and 10
+            int numPlayers = new Random().Next(2, 11); 
 
-            players.Add(barbara);
-            players.Add(john);
-            players.Add(michael);
+            for (int i = 0; i < numPlayers; i++)
+            {
+                players.Add(new UnoPlayer($"Player {i + 1}"));
+            }
+
         }
 
-        void Deal()
+        static void Deal()
         {
             //now deal 7 cards to each player
 
@@ -83,7 +82,7 @@ namespace Uno
             }
         }
             
-            void ShowTopCard()
+            static void ShowTopCard()
             {
                             Console.WriteLine();
             if (topCard != null)
