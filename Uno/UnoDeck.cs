@@ -33,7 +33,7 @@ namespace Uno
                 }
 
                 // add specials
-                    deck.Add(new UnoCard
+                deck.Add(new UnoCard
                 {
                     cardColor = color,
                     cardValue = "Reverse",
@@ -41,7 +41,7 @@ namespace Uno
                     isPlus2 = false,
                     isReverse = true
                 }
-                                );
+                );
 
                 deck.Add(new UnoCard
                 {
