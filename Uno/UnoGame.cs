@@ -7,18 +7,18 @@ namespace Uno
     class UnoGame
     {
         // colors of the cards
-        static string[] colors = new string[] { "Red", "Yellow", "Green", "Blue" };
+        static readonly string[] colors = ["Red", "Yellow", "Green", "Blue"];
 
         //values of the cards
-        static string[] values = new string[] { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Zero" };
+        static readonly string[] values = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Zero"];
 
-        static UnoDeck unoDeck = new UnoDeck(colors, values);
+        static UnoDeck unoDeck = new(colors, values);
 
-        static List<UnoPlayer> players = new List<UnoPlayer>();
+        static List<UnoPlayer> players = [];
 
-        static UnoCard topCard = new UnoCard();
+        static UnoCard topCard = new();
 
-        static UnoCard discard = new UnoCard();
+        static UnoCard discard = new();
         // constructor 
 
         public UnoGame()
@@ -71,7 +71,7 @@ namespace Uno
 
         static void Deal()
         {
-            //now deal 7 cards to each player
+            // deal 7 cards to each player
 
             for (int deal = 0; deal < 7; deal++)
             {
@@ -84,7 +84,7 @@ namespace Uno
             
             static void ShowTopCard()
             {
-                            Console.WriteLine();
+            Console.WriteLine();
             if (topCard != null)
             {
                 Console.WriteLine("Top card: {0}.", topCard.ToString());

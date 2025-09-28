@@ -9,7 +9,7 @@ namespace Uno
     {
         public string Name { get; set; }
 
-        private List<UnoCard> hand = new List<UnoCard>();
+        private List<UnoCard> hand = [];
 
         public void AddCard(UnoCard unoCard)
         {
@@ -32,7 +32,7 @@ namespace Uno
 
         public UnoCard Play(UnoCard top, UnoDeck deck)
         {
-            UnoCard newCard = new UnoCard();
+            UnoCard newCard = new();
 
             foreach (UnoCard u in hand)
             {

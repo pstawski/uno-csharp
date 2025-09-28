@@ -6,7 +6,7 @@ namespace Uno
 {
     class UnoDeck
     {
-        private List<UnoCard> deck = new List<UnoCard>();
+        private List<UnoCard> deck = [];
         private int nextCard = 0;
 
         public UnoDeck(string[] colors, string[] values)
@@ -63,11 +63,11 @@ namespace Uno
 
         public void Shuffle()
         {
-            UnoCard tmpCard = new UnoCard();
+            UnoCard tmpCard = new();
             int magic = 255;
             int idx1;
             int idx2;
-            Random rnd = new Random();
+            Random rnd = new();
 
             for (int i = 0; i < magic; i++)
             {

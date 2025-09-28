@@ -8,7 +8,7 @@ namespace Uno
     {
         static void Main(string[] args)
         {
-            UnoGame game = new UnoGame();
+            UnoGame game = new();
             game.Play();
         }
     }      
