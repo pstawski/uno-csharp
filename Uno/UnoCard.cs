@@ -16,8 +16,8 @@ namespace Uno
 
        public override string  ToString()
         {
-            string s = $"{cardValue} {cardColor}";
-            return s;
+            
+            return $"{cardValue} {cardColor}";;
 
         }
 

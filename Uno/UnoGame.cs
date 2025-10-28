@@ -42,11 +42,12 @@ namespace Uno
                 foreach (var player in players)
                 {
                     discard = player.Play(topCard, unoDeck);
-                    //Console.ReadLine();
+                    
                     if (discard != null)
                     {
                         topCard = discard;
                     }
+                    ShowTopCard();
 
                     if (player.CountHand() == 0)
                     {
@@ -87,7 +88,7 @@ namespace Uno
             Console.WriteLine();
             if (topCard != null)
             {
-                Console.WriteLine("Top card: {0}.", topCard.ToString());
+                Console.WriteLine("Top card is {0}.", topCard.ToString());
             }
             else
             {
