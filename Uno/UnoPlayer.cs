@@ -7,7 +7,7 @@ namespace Uno
 {
     class UnoPlayer
     {
-        public string Name { get; set; }
+        public string Name { get; init; }
 
         private List<UnoCard> hand = [];
 
@@ -37,7 +37,6 @@ namespace Uno
             }
             Console.ReadLine();
         }
-
         public UnoCard Play(UnoCard top, UnoDeck deck)
         {
             foreach (UnoCard u in this.hand)
@@ -46,7 +45,6 @@ namespace Uno
                 {
                     debug.DebugMessage(UnoDebugger.INFO, $"{this.Name} plays {u.cardValue} {u.cardColor}.");
                     
-
                     this.hand.Remove(u);
                     CheckForUno();
                     return u;
@@ -109,8 +107,6 @@ namespace Uno
         {
             return hand.Count;
         }
-        
-        
 
     }
 }
