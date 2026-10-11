@@ -5,24 +5,21 @@ using System.Text;
 
 namespace Uno
 {
-    class UnoPlayer
+    record UnoPlayer ()
     {
-        public required string Name { get; init; }
-
+        public required string Name { get; init; }      
         private List<UnoCard> hand = [];
 
         static UnoDebugger debug = new();
-
-        
 
         public void AddCard(UnoCard unoCard)
         {
             hand.Add(unoCard);
         }
 
-        public UnoPlayer(string playerName)
+        public UnoPlayer(string playerName) : this()
         {
-            Name = playerName;
+            this.Name = playerName;
             
             debug.DebugMessage(UnoDebugger.INFO, $"Player {this.Name} has joined the game." );
         }
@@ -41,7 +38,7 @@ namespace Uno
         {
             foreach (UnoCard u in this.hand)
             {
-                if (Equals(u.cardColor, top.cardColor) | Equals(u.cardValue, top.cardValue))
+                if (Equals(u.CardColor, top.CardColor) | Equals(u.CardValue, top.CardValue))
                 {
                     debug.DebugMessage(UnoDebugger.INFO, $"{this.Name} plays {u.cardValue} {u.cardColor}.");
                     
@@ -68,9 +65,9 @@ namespace Uno
             }
             // check to see if we can immediately play the new card
 
-            if (Equals(newCard.cardColor, top.cardColor) | Equals(newCard.cardValue, top.cardValue))
+            if (Equals(newCard.CardColor, top.CardColor) | Equals(newCard.CardValue, top.CardValue))
             {
-               debug.DebugMessage(UnoDebugger.INFO,$"{this.Name} draws and immediately plays {newCard.cardValue} {newCard.cardColor}.");
+               debug.DebugMessage(UnoDebugger.INFO,$"{this.Name} draws and immediately plays {newCard.CardValue} {newCard.CardColor}.");
                
                 CheckForUno();
                 return newCard;
@@ -78,7 +75,7 @@ namespace Uno
 
 
             // new card is no match with top card
-            debug.DebugMessage(UnoDebugger.INFO ,$"{this.Name} draws and adds {newCard.cardValue} {newCard.cardColor} to their hand.");
+            debug.DebugMessage(UnoDebugger.INFO ,$"{this.Name} draws and adds {newCard.CardValue} {newCard.CardColor} to their hand.");
           
 
             hand.Add(newCard);

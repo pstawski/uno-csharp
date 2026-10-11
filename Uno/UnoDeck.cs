@@ -25,7 +25,7 @@ namespace Uno
                 }
 
                 // add specials
-                deck.Add(new UnoCard(CardValue: "Reverse", CardColor: color, CardType: UnoCardType.Reverse));
+                deck.Add(new UnoCard( "Reverse", color, UnoCardType.Reverse));
 
                 deck.Add(new UnoCard("Plus Two", color, UnoCardType.Plus2));
             }
@@ -39,7 +39,7 @@ namespace Uno
 
         public void Shuffle()
         {
-            UnoCard tmpCard = new();
+            //UnoCard tmpCard = new();
             int magic = 255;
             int idx1;
             int idx2;
@@ -49,7 +49,7 @@ namespace Uno
             {
                 idx1 = rnd.Next(0, deck.Count);
                 idx2 = rnd.Next(0, deck.Count);
-                tmpCard = deck[idx1];
+                UnoCard tmpCard = deck[idx1];
                 deck[idx1] = deck[idx2];
                 deck[idx2] = tmpCard;
             }
