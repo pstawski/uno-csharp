@@ -16,10 +16,9 @@ namespace Uno
 
         static List<UnoPlayer> players = [];
 
-        static UnoCard topCard = new();
+        static UnoCard topCard;
 
-        static UnoCard discard = new();
-        // constructor 
+        static UnoCard discard;
 
         public UnoGame()
         {
@@ -65,7 +64,7 @@ namespace Uno
 
             for (int i = 0; i < numPlayers; i++)
             {
-                players.Add(new UnoPlayer($"Player {i + 1}"));
+                players.Add(new UnoPlayer(Name: $"Player {i + 1}"));
             }
 
         }

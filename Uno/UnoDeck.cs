@@ -20,38 +20,14 @@ namespace Uno
                     // add two of each
                     for (int i = 0; i < 2; i++)
                     {
-                        deck.Add(new UnoCard
-                        {
-                            cardColor = color,
-                            cardValue = value,
-                            isJoker = false,
-                            isPlus2 = false,
-                            isReverse = false
-                        }
-                        );
+                        deck.Add(new UnoCard( value,  color,  UnoCardType.Number));
                     }
                 }
 
                 // add specials
-                deck.Add(new UnoCard
-                {
-                    cardColor = color,
-                    cardValue = "Reverse",
-                    isJoker = false,
-                    isPlus2 = false,
-                    isReverse = true
-                }
-                );
+                deck.Add(new UnoCard(CardValue: "Reverse", CardColor: color, CardType: UnoCardType.Reverse));
 
-                deck.Add(new UnoCard
-                {
-                    cardColor = color,
-                    cardValue = "Plus 2",
-                    isJoker = false,
-                    isPlus2 = true,
-                    isReverse = false
-                }
-                );
+                deck.Add(new UnoCard("Plus Two", color, UnoCardType.Plus2));
             }
         }
 

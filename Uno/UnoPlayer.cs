@@ -7,7 +7,7 @@ namespace Uno
 {
     class UnoPlayer
     {
-        public string Name { get; init; }
+        public required string Name { get; init; }
 
         private List<UnoCard> hand = [];
 
@@ -52,14 +52,14 @@ namespace Uno
         
             }
             // can not play, so draw
-            UnoCard newCard = new();
+            //UnoCard newCard = new();
             if (deck.Count() == 0)
             {
                debug.DebugMessage(UnoDebugger.ERROR, $"Deck is empty, cannot draw a card.");
                 
                 return null;
             }
-            newCard = deck.GetCard();
+            UnoCard newCard = deck.GetCard();
             if (newCard == null)
             {
                debug.DebugMessage(UnoDebugger.ERROR,$"Draw returned NULL.");

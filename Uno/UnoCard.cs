@@ -4,20 +4,41 @@ using System.Text;
 
 namespace Uno
 {
-    class UnoCard
-     {
-        public string cardValue { get; set; }
-        public string cardColor { get; set; }
+   public enum UnoCardType
+    {
+        Number,
+        Reverse,
+        Plus2,
+        Joker
+    }
 
-        public bool isJoker { get; set; }
+    public record UnoCard (string CardValue, string CardColor, UnoCardType CardType)
+     {/* 
+        public required string CardValue { get; init; }
+        public required string CardColor { get; init; }
+        public required UnoCardType CardType { get; init; } */
 
-        public bool isReverse { get; set; }
-        public bool isPlus2 { get; set; }
+        private readonly Dictionary<UnoCardType, string>  cardTypeString = new Dictionary<UnoCardType, string>
+        {
+            { UnoCardType.Number, "Number" },
+            { UnoCardType.Reverse, "Reverse" },
+            { UnoCardType.Plus2, "Plus Two" },
+            { UnoCardType.Joker, "Joker" }
+        };
+
+
+/*         public UnoCard(string value, string color, UnoCardType type)
+        {
+            CardValue = value;
+            CardColor = color;
+            CardType = type;
+        } */
+
 
        public override string  ToString()
         {
             
-            return $"{cardValue} {cardColor}";;
+            return $"{CardValue} {CardColor} ({cardTypeString[CardType]})";
 
         }
 

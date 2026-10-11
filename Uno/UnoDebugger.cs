@@ -11,7 +11,7 @@ namespace Uno
         public const int INFO = 1;
         public const int ERROR = 2;
         // desired level of debug output
-        public const int DEBUGLEVEL = 2;
+        public const int DEBUGLEVEL = INFO;
 
 
         public void DebugMessage(int level, string debugmessage)
