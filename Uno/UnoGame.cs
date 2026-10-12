@@ -65,6 +65,7 @@ namespace Uno
             for (int i = 0; i < numPlayers; i++)
             {
                 UnoPlayer p = new UnoPlayer($"Player {i + 1}");
+ 
                 players.Add(p);
             }
 
