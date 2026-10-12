@@ -40,7 +40,7 @@ namespace Uno
             {
                 if (Equals(u.CardColor, top.CardColor) | Equals(u.CardValue, top.CardValue))
                 {
-                    debug.DebugMessage(UnoDebugger.INFO, $"{this.Name} plays {u.cardValue} {u.cardColor}.");
+                    debug.DebugMessage(UnoDebugger.INFO, $"{this.Name} plays {u.CardValue} {u.CardColor}.");
                     
                     this.hand.Remove(u);
                     CheckForUno();
